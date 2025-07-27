@@ -41,7 +41,7 @@ export default function GamePage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white">
       <h2 className="text-3xl font-semibold mb-4">
-        Player {isXTurn ? 'X' : 'O'}'s Turn
+        Player {isXTurn ? 'X' : 'O'}&apos;s Turn
       </h2>
       <div className="grid grid-cols-3 gap-2">
         {board.map((_, index) => renderBox(index))}
@@ -61,7 +61,7 @@ function calculateWinner(board: string[]) {
     [0, 4, 8],
     [2, 4, 6],
   ];
-  for (let [a, b, c] of lines) {
+  for (const [a, b, c] of lines) {
     if (board[a] && board[a] === board[b] && board[a] === board[c]) {
       return board[a];
     }
